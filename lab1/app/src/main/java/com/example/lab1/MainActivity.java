@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton radioButtonRectangle;
     private RadioButton radioButtonTriangle;
     private TextView textViewResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,39 +37,29 @@ public class MainActivity extends AppCompatActivity {
     public void buttonOkClick(View view) {
         textViewResult.setText("Result: ");
 
-        if(checkBoxS.isChecked())
-        {
-            if(radioButtonCircle.isChecked()){
-                textViewResult.setText(textViewResult.getText()+"S=Pi*r^2 ");
-            }
-            else
-            if(radioButtonRectangle.isChecked()){
-                textViewResult.setText(textViewResult.getText()+"S=a*b ");
-            }
-            else
-            if(radioButtonTriangle.isChecked()){
-                textViewResult.setText(textViewResult.getText()+"S=sqrt(p*(p−a)*(p−b)*(p−c)) ");
-            }
-            else
-                textViewResult.setText(textViewResult.getText()+"Choose the option! ");
+        if (checkBoxS.isChecked()) {
+            if (radioButtonCircle.isChecked()) {
+                textViewResult.setText(textViewResult.getText() + "S=Pi*r^2 ");
+            } else if (radioButtonRectangle.isChecked()) {
+                textViewResult.setText(textViewResult.getText() + "S=a*b ");
+            } else if (radioButtonTriangle.isChecked()) {
+                textViewResult.setText(textViewResult.getText() + "S=sqrt(p*(p−a)*(p−b)*(p−c)) ");
+            } else
+                textViewResult.setText(textViewResult.getText() + "Choose the option! ");
         }
-        if(checkBoxP.isChecked())
-        {
-            if(radioButtonCircle.isChecked()){
-                textViewResult.setText(textViewResult.getText()+"P=2*Pi*r ");
-            }
-            else
-            if(radioButtonRectangle.isChecked()){
-                textViewResult.setText(textViewResult.getText()+"P=2*(a+b) ");
-            }
-            else
-            if(radioButtonTriangle.isChecked()){
-                textViewResult.setText(textViewResult.getText()+"P=a+b+c ");
-            }
-            else
-                textViewResult.setText(textViewResult.getText()+"Choose the option! ");
+        if (checkBoxP.isChecked()) {
+            if (radioButtonCircle.isChecked()) {
+                textViewResult.setText(textViewResult.getText() + "P=2*Pi*r ");
+            } else if (radioButtonRectangle.isChecked()) {
+                textViewResult.setText(textViewResult.getText() + "P=2*(a+b) ");
+            } else if (radioButtonTriangle.isChecked()) {
+                textViewResult.setText(textViewResult.getText() + "P=a+b+c ");
+            } else
+                textViewResult.setText(textViewResult.getText() + "Choose the option! ");
         }
-        if(!checkBoxP.isChecked() && !checkBoxS.isChecked())
-            textViewResult.setText(textViewResult.getText()+"Choose the option! ");
+        if (!checkBoxP.isChecked() && !checkBoxS.isChecked()) {
+            Toast toast1 = Toast.makeText(getApplicationContext(), "Fill check boxes and radio buttons!", Toast.LENGTH_SHORT);
+            toast1.show();
+        }
     }
 }
