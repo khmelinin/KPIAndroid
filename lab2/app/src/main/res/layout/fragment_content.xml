@@ -62,14 +62,14 @@
         app:layout_constraintStart_toEndOf="@+id/checkBoxP"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="386dp"
-        android:layout_height="118dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="40dp"
-        android:text="Result: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxS" />
+<!--    <TextView-->
+<!--        android:id="@+id/textViewResult"-->
+<!--        android:layout_width="386dp"-->
+<!--        android:layout_height="118dp"-->
+<!--        android:layout_marginStart="9dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text="Result: "-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/checkBoxS" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
