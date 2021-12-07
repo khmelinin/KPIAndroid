@@ -1,0 +1,12 @@
+com/example/lab2/BuildConfig.java
+ com.example.lab2.BuildConfig
+com/example/lab2/OutputFragment.java
+ com.example.lab2.OutputFragment
+com/example/lab2/BlankFragment.java
+ com.example.lab2.BlankFragment
+com/example/lab2/ContentFragment.java
+ com.example.lab2.ContentFragment
+ com.example.lab2.ContentFragment$1
+ com.example.lab2.ContentFragment$OnFragmentSendDataListener
+com/example/lab2/MainActivity.java
+ com.example.lab2.MainActivity
