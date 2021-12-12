@@ -18,7 +18,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.lab2.filesystem.FileSystem;
+
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -60,7 +63,6 @@ public class ContentFragment extends Fragment {
         RadioButton radioButtonTriangle = view.findViewById(R.id.radioButtonTriangle);
 
 
-
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +74,7 @@ public class ContentFragment extends Fragment {
                     } else if (radioButtonRectangle.isChecked()) {
                         selectedItem += "S=a*b ";
                     } else if (radioButtonTriangle.isChecked()) {
-                        selectedItem +="S=sqrt(p*(p−a)*(p−b)*(p−c)) ";
+                        selectedItem += "S=sqrt(p*(p−a)*(p−b)*(p−c)) ";
                     } else
                         selectedItem += "Choose the option! ";
                 }
@@ -99,33 +101,13 @@ public class ContentFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), OpenActivity.class));
-
             }
         });
 
         buttonClearFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BufferedWriter bw = null;
-                try {
-                    bw = new BufferedWriter(new FileWriter(getView().getContext().getFilesDir() + "content.txt")); // append
-                    bw.write("");
-                    Toast.makeText(getView().getContext(),"File cleared" , Toast.LENGTH_SHORT).show();
-                }
-                catch(IOException ex) {
-
-                    Toast.makeText(view.getContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                finally{
-                    try{
-                        if(bw!=null)
-                            bw.close();
-                    }
-                    catch(IOException ex){
-
-                        Toast.makeText(view.getContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }
+                FileSystem.clearText(view);
             }
         });
     }

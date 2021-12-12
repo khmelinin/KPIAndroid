@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.lab2.filesystem.FileSystem;
+
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -49,53 +51,7 @@ public class OutputFragment extends Fragment {
     }
 
     public void saveText(View view, String selectedItem){
-        BufferedWriter bw = null;
-        try {
-            bw = new BufferedWriter(new FileWriter(getView().getContext().getFilesDir() + FILE_NAME, true)); // append
-            bw.write(selectedItem);
-            bw.newLine();
-            Toast.makeText(getView().getContext(),"Saved to: " + getView().getContext().getFilesDir().getPath() , Toast.LENGTH_SHORT).show();
-        }
-        catch(IOException ex) {
-
-            Toast.makeText(view.getContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-        finally{
-            try{
-                if(bw!=null)
-                    bw.close();
-            }
-            catch(IOException ex){
-
-                Toast.makeText(view.getContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
+        FileSystem.saveText(view, selectedItem);
     }
 
-//    public void openText(View view){
-//
-//        FileInputStream fin = null;
-//        try {
-//            fin = new FileInputStream(FILE_NAME);
-//            byte[] bytes = new byte[fin.available()];
-//            fin.read(bytes);
-//            String text = new String (bytes);
-//            fragmentSendDataListener.onSendData(text);
-//        }
-//        catch(IOException ex) {
-//
-//            Toast.makeText(view.getContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-//        }
-//        finally{
-//
-//            try{
-//                if(fin!=null)
-//                    fin.close();
-//            }
-//            catch(IOException ex){
-//
-//                Toast.makeText(view.getContext(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
 }
