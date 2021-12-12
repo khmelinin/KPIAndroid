@@ -1,5 +1,6 @@
 package com.example.lab2.filesystem;
 
+import android.app.Activity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,11 +38,11 @@ public class FileSystem {
 //        }
     }
 
-    public static void loadText(OpenActivity openActivity) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(openActivity.getFilesDir() + "content.txt"))) {
+    public static void loadText(Activity activity) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(activity.getFilesDir() + "content.txt"))) {
             String line = reader.readLine();
             if (line == null) {
-                Toast.makeText(openActivity, "File is empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "File is empty", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -54,7 +55,7 @@ public class FileSystem {
                 res.append("\n");
             }
 
-            TextView textView = openActivity.findViewById(R.id.textViewOpen);
+            TextView textView = activity.findViewById(R.id.textViewOpen);
             textView.setText(res.toString());
         } catch (IOException e) {
             e.printStackTrace();
