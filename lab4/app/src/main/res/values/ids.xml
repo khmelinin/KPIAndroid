@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="playButton" type="id" />
+    <item name="videoPlayer" type="id" />
+    <item name="pauseButton" type="id" />
+    <item name="stopButton" type="id" />
+    <item name="listView" type="id" />
+</resources>
