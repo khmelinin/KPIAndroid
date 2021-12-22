@@ -40,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
         videoPlayer.resume();
     }
 
+    public void goToVideo(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
     public void goToAudio(View view) {
         startActivity(new Intent(this, AudioActivity.class));
+    }
+
+    public void goToWeb(View view) {
+        startActivity(new Intent(this, WebActivity.class));
     }
 }

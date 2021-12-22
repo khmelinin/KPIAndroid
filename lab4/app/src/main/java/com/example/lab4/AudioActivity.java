@@ -107,4 +107,8 @@ public class AudioActivity extends AppCompatActivity {
     public void goToVideo(View view) {
         startActivity(new Intent(this, MainActivity.class));
     }
+
+    public void goToWeb(View view) {
+        startActivity(new Intent(this, WebActivity.class));
+    }
 }

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab4">
         <activity
+            android:name=".WebActivity"
+            android:exported="false" />
+        <activity
             android:name=".AudioActivity"
             android:exported="false" />
         <activity

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Play"
         android:onClick="play"
+        app:layout_constraintBottom_toTopOf="@id/videoButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/pauseButton"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,17 +22,20 @@
         android:layout_height="wrap_content"
         android:text="Pause"
         android:onClick="pause"
+        app:layout_constraintBottom_toTopOf="@id/videoButton"
         app:layout_constraintLeft_toRightOf="@id/playButton"
         app:layout_constraintRight_toLeftOf="@id/stopButton"
         app:layout_constraintTop_toTopOf="parent"/>
+
     <Button
         android:id="@+id/stopButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Stop"
         android:onClick="stop"
+        android:text="Stop"
+        app:layout_constraintBottom_toTopOf="@id/videoButton"
         app:layout_constraintLeft_toRightOf="@id/pauseButton"
-        app:layout_constraintRight_toRightOf="@id/videoButton"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/videoButton"
@@ -39,15 +43,26 @@
         android:layout_height="wrap_content"
         android:text="Go to Video"
         android:onClick="goToVideo"
-        app:layout_constraintLeft_toRightOf="@id/stopButton"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/volumeControl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/webButton"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/webButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Go to Web"
+        android:onClick="goToWeb"
+
+        app:layout_constraintLeft_toRightOf="@id/videoButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/videoButton" />
     <SeekBar
         android:id="@+id/volumeControl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/playButton"
+        app:layout_constraintTop_toBottomOf="@id/videoButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
